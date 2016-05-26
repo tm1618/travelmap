@@ -1,0 +1,199 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2016-05-26T13:53:30.304Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Visited",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2016-05-26T13:53:35.759Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Want to Visit",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2016-05-26T13:53:50.219Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Home",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2016-05-26T13:55:19.495Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "California",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2016-05-26T13:55:19.496Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "California",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2016-05-26T17:07:12.781Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "12",
+        "object_repr": "Canada",
+        "action_flag": 2,
+        "change_message": "Changed country."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2016-05-26T17:07:30.724Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "12",
+        "object_repr": "Canada",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "2rqlwahk87p84gjtgu3745ruleiyfi7y",
+    "fields": {
+        "session_data": "MDRmOTIyYmNiNWMwMmMxMDhmYmJhNGVlOTJhZmRkNTVhNjQyY2JmYTp7Il9hdXRoX3VzZXJfaGFzaCI6ImMyMjRhODI3YWFhODU5ZjNhMDJmNzQxYzM2OTc1ZTA3Zjg5NjdmOGYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=",
+        "expire_date": "2016-06-09T13:53:00.107Z"
+    }
+},
+{
+    "model": "map.type",
+    "pk": 1,
+    "fields": {
+        "type": "Visited"
+    }
+},
+{
+    "model": "map.type",
+    "pk": 2,
+    "fields": {
+        "type": "Want to Visit"
+    }
+},
+{
+    "model": "map.location",
+    "pk": 20,
+    "fields": {
+        "title": "California",
+        "type": 1,
+        "address": "",
+        "city": "Pasadena",
+        "state": "CA",
+        "zipcode": "",
+        "country": "United States",
+        "latlng": "34.1477849,-118.1445155"
+    }
+},
+{
+    "model": "map.location",
+    "pk": 21,
+    "fields": {
+        "title": "Home",
+        "type": 1,
+        "address": "104 Pennhurst Dr",
+        "city": "Harvest",
+        "state": "AL",
+        "zipcode": "35749",
+        "country": "United States",
+        "latlng": "34.8415435,-86.761749"
+    }
+},
+{
+    "model": "map.location",
+    "pk": 22,
+    "fields": {
+        "title": "Atlanta",
+        "type": 1,
+        "address": "",
+        "city": "Atlanta",
+        "state": "GA",
+        "zipcode": "",
+        "country": "United States",
+        "latlng": "33.7489954,-84.3879824"
+    }
+},
+{
+    "model": "map.location",
+    "pk": 23,
+    "fields": {
+        "title": "New York City",
+        "type": 1,
+        "address": "",
+        "city": "New York City",
+        "state": "NY",
+        "zipcode": "",
+        "country": "United States",
+        "latlng": "40.7127837,-74.0059413"
+    }
+},
+{
+    "model": "map.location",
+    "pk": 24,
+    "fields": {
+        "title": "Denver",
+        "type": 1,
+        "address": "",
+        "city": "Denver",
+        "state": "CO",
+        "zipcode": "",
+        "country": "United States",
+        "latlng": "39.7392358,-104.990251"
+    }
+},
+{
+    "model": "map.location",
+    "pk": 25,
+    "fields": {
+        "title": "Colorado Springs",
+        "type": 1,
+        "address": "",
+        "city": "Colorado Springs",
+        "state": "CO",
+        "zipcode": "",
+        "country": "United States",
+        "latlng": "38.8338816,-104.8213634"
+    }
+}
+]
