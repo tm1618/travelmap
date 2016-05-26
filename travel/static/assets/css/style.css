@@ -7,7 +7,7 @@ html, body {
 /* Map and Legend CSS */
 #map {
     height: 100%;
-    width: 50%;
+    width: 60%;
 }
 
 
@@ -36,6 +36,7 @@ html, body {
 /* Table styling*/
 #table {
     margin-top: 30px;
+    max-width: 700px;
 }
 /* End table styling*/
 
