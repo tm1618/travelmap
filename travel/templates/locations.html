@@ -6,6 +6,7 @@
 
 {% block content %}
 <div class="wrapper">
+
 <div id="form">
 
     <form action="" method="post">{% csrf_token %}
@@ -13,19 +14,24 @@
 {{ form|crispy }}
 
 
-<input type="submit" name="submit" value="Submit">
+<input class="submitBtn btn btn-primary" type="submit" name="submit" value="Submit">
 
 
 </form>
 
 </div>
 
-
+{% if messages %}
+    {% for message in messages %}
+        <h4> {{ message }} </h4>
+    {% endfor %}
+{% endif %}
 
 
 <div id="table">
-    <table>
+    <table class="table">
         <thead>
+            <th>Edit</th>
             <th>Type</th>
             <th>Address</th>
             <th>City</th>
@@ -36,6 +42,7 @@
         </thead>
         {% for i in locations %}
         <tr class="location">
+            <td><a href="location/{{ i.id }}"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></td>
             <td>{{ i.type }}</td>
             <td>{{ i.address }}</td>
             <td>{{ i.city }}</td>
@@ -51,25 +58,33 @@
 
 </div>
 </div>
-
-<div id="map"></div>
-
-<div class="legend">
-    <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"><p>Where I've Been</p>
-    <img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"><p>Where I'm Going</p>
 </div>
+
+<!--Generation of map and legend -->
+<div class="legend">
+        <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"><span>Where I've Been</span>
+        <img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"><span>Where I'm Going</span>
+</div>
+<div id="map"></div>
+<!-- End map and legend -->
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>
-    var markers =   [{% for i in locations %}
-                        [ '{{ i.title }}', {{ i.latlng }}],
-                    {% endfor %}];
 
-    var type =      [{% for i in locations %}
-                            [ '{{ i.type }}'],
-                        {% endfor %}];
+
+<!--Creation of django variables for scripts.js -->
+<script>
+var markers =[  {% for i in locations %}
+                    [ '{{ i.title }}', {{ i.latlng }}],
+                {% endfor %}];
+
+var type =   [  {% for i in locations %}
+                    [ '{{ i.type }}'],
+                {% endfor %}];
 </script>
+<!-- End creation of js variables -->
+
 <script src="{% static 'assets/js/scripts.js' %}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSRvNM9RdfEPlkvBn2Wn1WymI7EUYKY0Y&callback=initMap"
 async defer></script>

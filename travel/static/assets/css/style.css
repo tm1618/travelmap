@@ -3,23 +3,46 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+/* Map and Legend CSS */
 #map {
-    height: 50%;
+    height: 80%;
     width: 50%;
 }
 
+.legend {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.legend img {
+    margin-left: 40px;
+}
+/* End Map and Legend CCSS */
 
 
+/* Wrappers and Containers */
 .wrapper {
     float:left;
     padding: 20px;
     height: 100%;
 }
 
+.container {
+    width: 95%;
+}
+/* End Wrappers and containers */
+
+
+/* Table styling*/
 #table {
     margin-top: 30px;
 }
+/* End table styling*/
 
-.legend {
-    margin-top: 30px;
+
+/* Form styling*/
+.submitBtn {
+    margin-top: 20px;
 }
+/* End form styling*/
