@@ -23,7 +23,7 @@
             } else if (type[i] == "Want to Visit") {
                 var iconVar = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
             }
-            
+
         /* Defines markers on each part of the map using the markers variable defined in the django template */
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(markers[i][1], markers[i][2]),
