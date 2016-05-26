@@ -1,15 +1,2 @@
-VirtualHost *:80>
-
-        Alias /static /home/ubuntu/travelmap/travel/static
-        <Directory /home/ubuntu/travelmap/travel/static>
-                Require all granted
-        </Directory>
-
-        WSGIDaemonProcess travelmap python-path=/home/ubuntu/travelmap/lib/python2.7/site-packages
-        WSGIScriptAlias / /home/ubuntu/travelmap/travel/travel/apache/wsgi.py
-
-        <Directory "/home/ubuntu/travelmap/travel/travel/apache/">
-                <Files wsgi.py>
-                        Require all granted
-                </Files>
-        </Directory>
+Thu May 26 15:48:11.357708 2016] [mpm_event:notice] [pid 10441:tid 140556545394560] AH00489: Apache/2.4.7 (Ubuntu) mod_wsgi/3.4 Python/2.7.6 $
+[Thu May 26 15:48:11.357801 2016] [core:notice] [pid 10441:tid 140556545394560] AH00094: Command line: '/usr/sbin/apache2'
