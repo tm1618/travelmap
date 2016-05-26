@@ -7,17 +7,18 @@ html, body {
 /* Map and Legend CSS */
 #map {
     height: 80%;
-    width: 40%;
+    width: 50%;
+    float: right;
+    margin-right: 50px;
 }
 
-.legend {
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
 
-.legend img {
-    margin-left: 40px;
-}
+ #legend {
+    display: none;
+    background: white;
+    padding: 10px;
+  }
+
 /* End Map and Legend CCSS */
 
 
