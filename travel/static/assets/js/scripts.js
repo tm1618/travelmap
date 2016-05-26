@@ -11,6 +11,12 @@
     /* Define the google map */
     var map = new google.maps.Map(document.getElementById("map"),myOptions);
 
+    /* Wait til map is loaded, then load Legend into map */
+    google.maps.event.addListenerOnce(map, 'idle', function(){
+        $('#legend').show();
+    });
+
+
     /* Define information windows to show name of markers */
     var infowindow = new google.maps.InfoWindow(), marker, i;
 
@@ -39,4 +45,10 @@
             }
         })(marker, i));
     }
+
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
+    document.getElementById('legend'));
+
 }
+
+
