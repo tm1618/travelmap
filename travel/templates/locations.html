@@ -9,9 +9,9 @@
 
 <div class="wrapper">
 
-<div id="form">
+<div class="form">
 
-    <form action="" method="post">{% csrf_token %}
+    <form action="" method="post" onsubmit="return validation();">{% csrf_token %}
 
 {{ form|crispy }}
 

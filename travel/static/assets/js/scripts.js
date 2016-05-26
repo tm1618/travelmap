@@ -23,7 +23,6 @@
     /* Loop through django variable "marker" and "type".  Type checks for "Visited" or "Want to Visit" and defines the icon
     type to be used based on the variable outcome */
     for (i = 0; i < markers.length; i++) {
-            console.log(type[i])
             if (type[i] == "Visited") {
                 var iconVar = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
             } else if (type[i] == "Want to Visit") {
@@ -48,7 +47,6 @@
 
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
     document.getElementById('legend'));
-
 }
 
-
+$('.error').find(':input').css({'border-color': '#b03535', 'box-shadow': '0 0 5px #d45252'});
