@@ -11,6 +11,18 @@ def all_locations(request):
     for i in locations:
         lat, long = i.latlng.split(",")
 
+    if request.POST:
+        form = LocationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+    else:
+        form = LocationForm()
+
+    location = Location.objects.all()
+    title = "Location"
+    url = "location"
+
     return render(request, "locations.html", locals())
 
 
