@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+
+      }
+        #table {
+            float:left;
+        }
+
+    </style>
+<div id="table">
+    <table>
+        <thead>
+            <th>Type</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Country</th>
+            <th>Lat Long</th>
+        </thead>
+        {% for i in locations %}
+        <tr class="location">
+            <td>{{ i.type }}</td>
+            <td>{{ i.address }}</td>
+            <td>{{ i.city }}</td>
+            <td>{{ i.state }}</td>
+            <td>{{ i.zipcode }}</td>
+            <td>{{ i.country }}</td>
+            <td>{{ i.latlng }}</td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+
+<img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"><p>Where I've Been</p>
+<img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"><p>Where I'm Going</p>
+</div>
+
+    <div id="map"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+
+        var markers =   [{% for i in locations %}
+                            [ '{{ i.title }}', {{ i.latlng }}],
+                        {% endfor %}];
+
+        var type =      [{% for i in locations %}
+                            [ '{{ i.type }}'],
+                        {% endfor %}];
+
+    function initMap() {
+        var latlng = new google.maps.LatLng(42.2847009,-33.720468 );
+        var myOptions = {
+            zoom: 3,
+            center: latlng,
+
+        };
+    var map = new google.maps.Map(document.getElementById("map"),myOptions);
+    var infowindow = new google.maps.InfoWindow(), marker, i;
+    for (i = 0; i < markers.length; i++) {
+            console.log(type[i])
+            if (type[i] == "Visited") {
+                var iconVar = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
+                console.log(iconVar);
+            } else if (type[i] == "Want to Visit") {
+                var iconVar = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+                console.log(iconVar);
+            }
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(markers[i][1], markers[i][2]),
+            map: map,
+            icon: iconVar
+        });
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                infowindow.setContent(markers[i][0]);
+                infowindow.open(map, marker);
+            }
+        })(marker, i));
+    }
+}
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSRvNM9RdfEPlkvBn2Wn1WymI7EUYKY0Y&callback=initMap"
+    async defer></script>
+
+{% endblock %}
+
