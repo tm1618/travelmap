@@ -1,0 +1,15 @@
+VirtualHost *:80>
+
+        Alias /static /home/ubuntu/travelmap/travel/static
+        <Directory /home/ubuntu/travelmap/travel/static>
+                Require all granted
+        </Directory>
+
+        WSGIDaemonProcess travelmap python-path=/home/ubuntu/travelmap/lib/python2.7/site-packages
+        WSGIScriptAlias / /home/ubuntu/travelmap/travel/travel/apache/wsgi.py
+
+        <Directory "/home/ubuntu/travelmap/travel/travel/apache/">
+                <Files wsgi.py>
+                        Require all granted
+                </Files>
+        </Directory>
