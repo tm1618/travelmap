@@ -7,11 +7,9 @@
 {% block content %}
 
 
-<div class="wrapper">
-
 <div class="form">
 
-    <form action="" method="post" onsubmit="return validation();">{% csrf_token %}
+    <form action="" method="post" name="locationForm" id="locationForm" onsubmit="return validateForm();">{% csrf_token %}
 
 {{ form|crispy }}
 
@@ -21,13 +19,22 @@
 
 </form>
 
-</div>
 
 {% if messages %}
     {% for message in messages %}
         <h4> {{ message }} </h4>
     {% endfor %}
 {% endif %}
+
+</div>
+
+<!--Generation of map and legend, Legend is hidden until map is fully loaded -->
+<div id="legend">
+    <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"><span>Where I've Been</span>
+    <img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"><span>Where I'm Going</span>
+</div>
+<div id="map"></div>
+<!-- End map and legend -->
 
 
 <div id="table">
@@ -51,22 +58,22 @@
             <td>{{ i.zipcode }}</td>
             <td>{{ i.country }}</td>
         </tr>
-        {% endfor %}
 
+        {% endfor %}
+    </table>
+
+    <table>
+        {% for i in locations %}
+        <tr>
+            <td>Geo Address: {{ i.geo_address }} </td>
+            <td>Full Address; {{ i.full_address }}</td>
+        </tr>
+        {% endfor %}
 
     </table>
 
 </div>
-</div>
-</div>
 
-<!--Generation of map and legend, Legend is hidden until map is fully loaded -->
-<div id="legend">
-    <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"><span>Where I've Been</span>
-    <img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"><span>Where I'm Going</span>
-</div>
-<div id="map"></div>
-<!-- End map and legend -->
 
 
 

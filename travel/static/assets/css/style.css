@@ -6,8 +6,10 @@ html, body {
 
 /* Map and Legend CSS */
 #map {
-    height: 100%;
-    width: 60%;
+    height: 50%;
+    width: 70%;
+    float: right;
+    margin: 20px;
 }
 
 
@@ -36,7 +38,9 @@ html, body {
 /* Table styling*/
 #table {
     margin-top: 30px;
-    max-width: 700px;
+    padding: 20px;
+    margin: 20px;
+
 }
 /* End table styling*/
 
@@ -44,5 +48,14 @@ html, body {
 /* Form styling*/
 .submitBtn {
     margin-top: 20px;
+}
+
+.form {
+    padding: 10px;
+    margin: 20px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 5px;
+    float:left;
 }
 /* End form styling*/

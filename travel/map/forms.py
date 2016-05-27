@@ -7,4 +7,4 @@ class LocationForm(forms.ModelForm):
 
     class Meta:
         model = Location
-        exclude = ('latitude','longitude')
+        exclude = 'latlng',

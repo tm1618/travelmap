@@ -16,6 +16,7 @@ def all_locations(request):
         form = LocationForm(request.POST)
         if form.is_valid():
             form.save()
+
             return HttpResponseRedirect('/')
     else:
         form = LocationForm()

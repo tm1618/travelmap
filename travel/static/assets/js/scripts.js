@@ -50,3 +50,42 @@
 }
 
 $('.error').find(':input').css({'border-color': '#b03535', 'box-shadow': '0 0 5px #d45252'});
+
+function capitalize(str) {
+    strVal = '';
+    str = str.split(' ');
+    for (var chr = 0; chr < str.length; chr++) {
+        strVal += str[chr].substring(0, 1).toUpperCase() + str[chr].substring(1, str[chr].length) + ' '
+    }
+    return strVal
+}
+
+$(function() {
+    $('.submitBtn').on('click', function() {
+        $('.error').remove();
+        var allowSubmit = true;
+        $.each($('#locationForm input:text'), function(index, formField) {
+            field = formField.name;
+            fieldname = capitalize(field);
+            if($(formField).val().trim().length == 0) {
+                console.log(fieldname + ' field is empty!')
+                $('.form').prepend('<p class="error" style="color:red">' + fieldname + ' is empty! </p>')
+                allowSubmit = false;
+            }
+        });
+        return allowSubmit;
+    });
+});
+
+
+$(document).ready(function() {
+    formwidth = $('.form').width();
+    formheight = $('.form').height();
+    mapwidth = $('#map').width();
+    mapheight = $('#map').height();
+    displaywidth = $(document).width();
+    margin = 130;
+
+    $('#map').css({'height': formheight, 'width': displaywidth-formwidth-margin})
+
+});
