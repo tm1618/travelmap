@@ -49,7 +49,7 @@
     document.getElementById('legend'));
 }
 
-$('.error').find(':input').css({'border-color': '#b03535', 'box-shadow': '0 0 5px #d45252'});
+
 
 function capitalize(str) {
     strVal = '';
@@ -60,22 +60,7 @@ function capitalize(str) {
     return strVal
 }
 
-$(function() {
-    $('.submitBtn').on('click', function() {
-        $('.error').remove();
-        var allowSubmit = true;
-        $.each($('#locationForm input:text'), function(index, formField) {
-            field = formField.name;
-            fieldname = capitalize(field);
-            if($(formField).val().trim().length == 0) {
-                console.log(fieldname + ' field is empty!')
-                $('.form').prepend('<p class="error" style="color:red">' + fieldname + ' is empty! </p>')
-                allowSubmit = false;
-            }
-        });
-        return allowSubmit;
-    });
-});
+
 
 
 $(document).ready(function() {
@@ -89,3 +74,34 @@ $(document).ready(function() {
     $('#map').css({'height': formheight, 'width': displaywidth-formwidth-margin})
 
 });
+
+
+
+// Form validation code will come here.
+      function validate()
+      {
+
+         if( document.locationForm.id_title.value == "" )
+         {
+            alert( "Please provide a Title!" );
+            document.locationForm.id_title.focus() ;
+            return false;
+         } else if( document.locationForm.id_type.value == "" )
+         {
+            alert( "Please provide a type!" );
+            document.locationForm.id_type.focus() ;
+            return false;
+         } else if (document.locationForm.id_zipcode.value.length > 0 && document.locationForm.id_zipcode.value.length != 5 )
+         {
+            alert( "Please provide a zip in the format #####." );
+            document.locationForm.id_zipcode.focus() ;
+            return false;
+         } else if ( document.locationForm.id_country.value == "" )
+         {
+            alert( "Please provide your country!" );
+            return false;
+         } else {
+            return( true );
+         }
+
+      }

@@ -9,7 +9,7 @@
 
 <div class="form">
 
-    <form action="" method="post" name="locationForm" id="locationForm" onsubmit="return validateForm();">{% csrf_token %}
+    <form action="" method="post" name="locationForm" id="locationForm" onsubmit="return(validate());">{% csrf_token %}
 
 {{ form|crispy }}
 
