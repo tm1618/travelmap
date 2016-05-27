@@ -80,25 +80,26 @@ $(document).ready(function() {
 // Form validation code will come here.
       function validate()
       {
-
+        $('#div_id_title p').remove();
          if( document.locationForm.id_title.value == "" )
          {
-            alert( "Please provide a Title!" );
+            $('#div_id_title').prepend('<p style="color:red">Please provide a title</p>');
             document.locationForm.id_title.focus() ;
-            return false;
-         } else if( document.locationForm.id_type.value == "" )
+
+         }  if( document.locationForm.id_type.value == "" )
          {
-            alert( "Please provide a type!" );
-            document.locationForm.id_type.focus() ;
-            return false;
-         } else if (document.locationForm.id_zipcode.value.length > 0 && document.locationForm.id_zipcode.value.length != 5 )
+            $('#div_id_title').prepend('<p style="color:red">Please provide a type</p>');
+         }  if( document.locationForm.id_city.value == "" )
          {
-            alert( "Please provide a zip in the format #####." );
+            $('#div_id_title').prepend('<p style="color:red">Please provide a city</p>');
+         }  if (document.locationForm.id_zipcode.value.length > 0 && document.locationForm.id_zipcode.value.length != 5 )
+         {
+            $('#div_id_title').prepend('<p style="color:red">Please provide a zip in the format #####.</p>');
             document.locationForm.id_zipcode.focus() ;
-            return false;
-         } else if ( document.locationForm.id_country.value == "" )
+
+         }  if ( document.locationForm.id_country.value == "" )
          {
-            alert( "Please provide your country!" );
+            $('#div_id_title').prepend('<p style="color:red">Please provide a country</p>');
             return false;
          } else {
             return( true );
