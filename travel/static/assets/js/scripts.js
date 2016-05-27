@@ -80,32 +80,46 @@ $(document).ready(function() {
 // Form validation code will come here.
       function validate()
       {
+
+         errors = 0;
         $('#div_id_title p').remove();
+        $('form input, select').css('border-color', '');
          if( document.locationForm.id_title.value == "" )
          {
+            errors += 1;
             $('#div_id_title').prepend('<p style="color:red">Please provide a title</p>');
-            $('#id_title').css({'box-shadow': '0 0 5px #d45252', 'border-color': '#b03535'});
+            $('#id_title').css('border-color', 'red');
 
-         }  if( document.locationForm.id_type.value == "" )
+         }   if( document.locationForm.id_type.value == "" )
          {
+            errors += 1;
             $('#div_id_title').prepend('<p style="color:red">Please provide a type</p>');
-            $('#id_type').css({'box-shadow': '0 0 5px #d45252', 'border-color': '#b03535'});;
-         }  if( document.locationForm.id_city.value == "" )
-         {
-            $('#div_id_title').prepend('<p style="color:red">Please provide a city</p>');
-            $('#id_city').css({'box-shadow': '0 0 5px #d45252', 'border-color': '#b03535'});
-         }  if (document.locationForm.id_zipcode.value.length > 0 && document.locationForm.id_zipcode.value.length != 5 )
-         {
-            $('#div_id_title').prepend('<p style="color:red">Please provide a zip in the format #####.</p>');
-            $('#id_zipcode').css({'box-shadow': '0 0 5px #d45252', 'border-color': '#b03535'});
+            $('#id_type').css('border-color', 'red');
 
-         }  if ( document.locationForm.id_country.value == "" )
+         }   if( document.locationForm.id_city.value == "" )
          {
+            errors += 1;
+            $('#div_id_title').prepend('<p style="color:red">Please provide a city</p>');
+            $('#id_city').css('border-color', 'red');
+
+         }   if (document.locationForm.id_zipcode.value.length > 0 && document.locationForm.id_zipcode.value.length != 5 )
+         {
+            errors += 1;
+            $('#div_id_title').prepend('<p style="color:red">Please provide a zip in the format #####.</p>');
+            $('#id_zipcode').css('border-color', 'red');
+
+         }   if ( document.locationForm.id_country.value == "" )
+         {
+            errors += 1;
             $('#div_id_title').prepend('<p style="color:red">Please provide a country</p>');
-            $('#id_country').css({'box-shadow': '0 0 5px #d45252', 'border-color': '#b03535'});
-            return false;
-         } else {
-            return( true );
+            $('#id_country').css('border-color', 'red');
          }
+
+
+        if (errors > 0) {
+            return false;
+        } else {
+            return( true );
+        }
 
       }
