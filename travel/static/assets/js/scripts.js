@@ -2,9 +2,9 @@
 /* Declar initMap function */
     function initMap() {
         /* Declare in inital latlng variable to center map on */
-        var latlng = new google.maps.LatLng(42.2847009,-33.720468 );
+        var latlng = new google.maps.LatLng(35.2135184,-14.193599 );
         var myOptions = {
-            zoom: 3,
+            zoom: 2,
             center: latlng,
         };
 
