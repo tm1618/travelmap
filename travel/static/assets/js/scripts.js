@@ -84,22 +84,25 @@ $(document).ready(function() {
          if( document.locationForm.id_title.value == "" )
          {
             $('#div_id_title').prepend('<p style="color:red">Please provide a title</p>');
-            document.locationForm.id_title.focus() ;
+            $('#id_title').css({'box-shadow': '0 0 5px #d45252', 'border-color': '#b03535'});
 
          }  if( document.locationForm.id_type.value == "" )
          {
             $('#div_id_title').prepend('<p style="color:red">Please provide a type</p>');
+            $('#id_type').css({'box-shadow': '0 0 5px #d45252', 'border-color': '#b03535'});;
          }  if( document.locationForm.id_city.value == "" )
          {
             $('#div_id_title').prepend('<p style="color:red">Please provide a city</p>');
+            $('#id_city').css({'box-shadow': '0 0 5px #d45252', 'border-color': '#b03535'});
          }  if (document.locationForm.id_zipcode.value.length > 0 && document.locationForm.id_zipcode.value.length != 5 )
          {
             $('#div_id_title').prepend('<p style="color:red">Please provide a zip in the format #####.</p>');
-            document.locationForm.id_zipcode.focus() ;
+            $('#id_zipcode').css({'box-shadow': '0 0 5px #d45252', 'border-color': '#b03535'});
 
          }  if ( document.locationForm.id_country.value == "" )
          {
             $('#div_id_title').prepend('<p style="color:red">Please provide a country</p>');
+            $('#id_country').css({'box-shadow': '0 0 5px #d45252', 'border-color': '#b03535'});
             return false;
          } else {
             return( true );
