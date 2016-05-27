@@ -32,7 +32,6 @@ class Location(models.Model):
         return u'%s %s %s %s' % (self.address, self.city, self.state, self.country)
     full_address = property(get_full_address)
 
-
     ## Geocode by just using zipcode and country name (faster and more reliable)
     def get_geo_address(self):
         return u'%s %s' % (self.country, self.zipcode)

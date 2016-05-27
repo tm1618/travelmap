@@ -61,19 +61,34 @@
 
         {% endfor %}
     </table>
+</div>
+    <hr>
+<div class="devdata">
+<h1 class="text-center">Development Data from geoAddress Methods in Model</h1>
+        <table class="table">
 
-    <table>
-        {% for i in locations %}
-        <tr>
-            <td>Geo Address: {{ i.geo_address }} </td>
-            <td>Full Address; {{ i.full_address }}</td>
-        </tr>
-        {% endfor %}
+            <thead>
+                <th>ID</th>
+                <th>Title</th>
+                <th>GeoAddress</th>
+                <th>FullAddress</th>
+                <th>LatLong</th>
+            </thead>
+            <tbody>
+            {% for i in locations %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.title }} </td>
+                    <td>{{ i.geo_address }} </td>
+                    <td>{{ i.full_address }} </td>
+                    <td>{{ i.latlng }} </td>
 
-    </table>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
 </div>
-
 
 
 
